@@ -1,0 +1,201 @@
+# node scripts/pack.mjs build --check
+filex-app.json is up to date.
+
+# node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
+filex language pack validator
+  catalogue : catalogue (filex 0.43.0) — 3588 strings (227 of them the server's: e-mails, public pages, notifications)
+  syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
+  pack      : filex-app.json (filex-app.json)
+
+[fr] 100% translated — 3588 of 3588 strings; the other 0 show in English
+  139 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+  plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
+  10 plural key(s) lack a form for one of those categories and show the plain form for it
+  errors: 0 (none) · warnings: 0 (none)
+  plural      inspector.activity.version: lacks inspector.activity.version_one
+  plural      inspector.versions.v: lacks inspector.versions.v_one
+  plural      opc.percent: lacks opc.percent_one
+  plural      selection.count: lacks selection.count_one
+  plural      server.app.wake.beyond: lacks server.app.wake.beyond_one
+  plural      sidenav.tags.more: lacks sidenav.tags.more_one
+  plural      tour.progress: lacks tour.progress_one
+  plural      tz.more: lacks tz.more_one
+  plural      viewer.counter: lacks viewer.counter_one
+  plural      viewer.page_n_of_m: lacks viewer.page_n_of_m_one
+
+# node scripts/validate-fr.mjs
+filex language-pack validator
+  English source : catalogue (catalogue in this repository)
+                   admin panel (vue-i18n)             1832 strings
+                   explorer (plain {var})             1587 strings
+                   server (mails, public pages)       227 strings
+                   58 keys exist in both catalogues -> 3588 strings
+  plurals        : one, other — 3 extra form key(s) beyond the catalogue
+  pack           : translations\fr.json  (3591 strings)
+  syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
+
+Keys shared by both catalogues: 58 (one flat pack value serves both).
+  identical English in both: 58
+
+Size: 236642 bytes of keys + values (limit 1048576).
+Errors  : 0 (none)
+Warnings: 0 (none)
+Consistency: 51 short English labels translated more than one way (see below)
+
+Same English, different French (review — context may justify it):
+  "Created"
+      "Créé le"  <- apiMcp.cols.created, common.created, shares.fields.created
+      "Créée le"  <- notifications.fields.createdAt
+  "Last used"
+      "Utilisé le"  <- apiMcp.cols.lastUsed
+      "Dernier usage"  <- conn.s3keys.col.lastUsed, conn.sshkeys.col.lastUsed, conn.tokens.col.used
+  "All"
+      "Tout"  <- apiMcp.scopeAll, search.scopeAll
+      "Tous"  <- common.all
+  "Delete"
+      "Suppression"  <- apiMcp.scopeName.delete, queue.type.delete, opc.kind.delete
+      "Supprimer"  <- common.delete, versions.purge, ctx.delete, shortcuts.delete
+  "{name} removed"
+      "Application {name} retirée"  <- appPlugins.deleted
+      "{name} retirée"  <- plugins.deleted
+  "Enabled"
+      "Activée"  <- appPlugins.detail.overrides.enabled, appPlugins.fields.enabled, plugins.fields.enabled, profile.totp.enabled (+1)
+      "Activé"  <- common.enabled, webhooks.fields.enabled
+  "Due"
+      "Échéance"  <- appPlugins.detail.schedule.due
+      "Prévu"  <- appPlugins.detail.schedule.statuses.due
+  "Failed"
+      "Échec"  <- appPlugins.detail.schedule.statuses.failed, appPlugins.state.failed, appearance.previewDanger, notifications.webhookStatus.failed (+3)
+      "Échecs"  <- queue.stats.failed, replica.report.fields.failedCount
+  "Updated"
+      "Mise à jour le"  <- appPlugins.detail.updated
+      "Mis à jour"  <- common.updated, dashboard.updatedFiles, sync.fields.updated
+  "{name} installed"
+      "Application {name} installée"  <- appPlugins.installed
+      "{name} installée"  <- plugins.installed
+  "Uploaded"
+      "Téléversée"  <- appPlugins.source.upload
+      "Téléversé"  <- usage.buckets.uploaded
+  "Off"
+      "Désactivée"  <- appPlugins.state.disabled, plugins.state.disabled
+      "Désactivé"  <- authProviders.status.disabled
+  "{name} upgraded"
+      "Application {name} mise à jour"  <- appPlugins.upgraded
+      "Extension {name} mise à jour"  <- plugins.upgrade.done
+  "Back"
+      "Retour"  <- appPlugins.wizard.back, common.back
+      "Précédent"  <- tour.back
+  "Install"
+      "Installer"  <- appPlugins.wizard.install, install.install, plugins.install
+      "Installation"  <- appPlugins.wizard.steps.done
+  "Upload"
+      "Téléverser"  <- appearance.previewUpload, plugin.sig.mode_upload, toolbar.upload
+      "Téléversement"  <- audit.target.upload, opc.kind.upload
+  "From"
+      "Du"  <- audit.fields.from
+      "De"  <- advsearch.size.from
+  "To"
+      "Au"  <- audit.fields.to
+      "À"  <- advsearch.size.to
+  "Auth providers"
+      "Fournisseurs d’authentification"  <- authProviders.title
+      "Authentification"  <- nav.authProviders
+  "Display name"
+      "Nom affiché"  <- branding.name
+      "Nom d’affichage"  <- storages.fields.name, users.fields.displayName
+  "Copied"
+      "Copié"  <- common.copied, desktop.copied, access.copied, conn.guide.copied (+2)
+      "Copiée"  <- e2e.recovery.copied
+  "Copy"
+      "Copier"  <- common.copy, desktop.copy, access.copy, conn.guide.copy (+6)
+      "Copie"  <- queue.type.copy, opc.kind.copy
+  "Disabled"
+      "Désactivé"  <- common.disabled, external.overall.disabled, external.states.disabled, conn.list.disabled
+      "Désactivée"  <- profile.totp.disabled
+  "Search"
+      "Rechercher"  <- common.search, advsearch.submit, toolbar.search, viewer.search
+      "Recherche"  <- nav.search, tour.step.search.title
+  "Added"
+      "Ajoutés"  <- dashboard.added, sync.fields.added
+      "Ajoutée"  <- conn.sshkeys.col.added
+  "Deleted"
+      "Supprimés"  <- dashboard.deleted, sync.fields.deleted
+      "Supprimé le"  <- trash.col_deleted_at, col.deleted
+      "Supprimé"  <- toast.deleted
+  "Users"
+      "Comptes"  <- dashboard.stats.users
+      "Utilisateurs"  <- nav.users, users.title
+  "Type"
+      "Type"  <- explore.cols.mime, queue.fields.type, settings.folderView.col_type, settings.folderView.sort_type (+4)
+      "Saisir"  <- plugin.sig.mode_type
+  "Modified"
+      "Modifié le"  <- explore.cols.modified, settings.folderView.col_modified, settings.folderView.sort_modified, userSettings.prefs.fvSort_modified (+2)
+      "Modifié"  <- filter.modified
+  "Sign in"
+      "Se connecter"  <- login.submit
+      "Connexion"  <- login.title
+  "Sync runs"
+      "Synchronisations"  <- nav.sync
+      "Exécutions de synchronisation"  <- sync.title
+  "Info"
+      "Information"  <- notifications.severity.info
+      "Infos"  <- ctx.info
+  "Verified"
+      "Vérifiée"  <- plugins.conformance.verified
+      "Vérifié"  <- settings.smtp.verified
+  "Cancelled"
+      "Annulée"  <- queue.cancelled, queue.status.cancelled
+      "Annulées"  <- queue.stats.cancelled
+      "Annulé"  <- opc.status.aborted
+  "Done"
+      "Terminée"  <- queue.status.done
+      "Terminé"  <- access.done, e2e.recovery.done, opc.status.done, plugin.pdf.pad_done (+2)
+  "Move"
+      "Déplacement"  <- queue.type.move, opc.kind.move
+      "Déplacer"  <- ctx.move
+  "Look in"
+      "Rechercher dans"  <- search.scope
+      "Chercher dans"  <- advsearch.scope.label
+  "Share"
+      "Partage réseau"  <- storages.fields.share
+      "Partager"  <- access.ui.share, ctx.share, modal.share.create, shortcuts.share (+1)
+  "Aborted"
+      "Interrompue"  <- sync.state.aborted
+      "Interrompu"  <- upload.aborted
+  "Empty trash"
+      "Vider la corbeille"  <- trash.empty, trash.empty_modal_title, trash.empty_action
+      "Vidage de la corbeille"  <- opc.kind.trash
+  "Star"
+      "Favori"  <- col.star
+      "Ajouter aux favoris"  <- ctx.star
+  "Mount it"
+      "Monter"  <- conn.guide.mount.linux.mountCaption, conn.guide.nfs.linux.mountCaption, conn.guide.nfs.mac.mountCaption
+      "Montage"  <- conn.guide.s3.s3fs.mountCaption
+  "Limited to"
+      "Limité à"  <- conn.nfs.col.scope
+      "Limitée à"  <- conn.s3keys.col.scope
+  "Convert"
+      "Convertir"  <- convert.convert, convert.title, ctx.convert, shortcuts.convert
+      "Conversion"  <- opc.kind.convert
+  "Cut"
+      "Couper"  <- ctx.cut, shortcuts.cut
+      "Coupé"  <- toast.cut
+  "Up one level"
+      "Dossier parent"  <- destpicker.up
+      "Remonter d’un niveau"  <- public.up
+      "Niveau supérieur"  <- toolbar.go_up
+  "Anyone"
+      "Tout le monde"  <- filter.people.any
+      "N’importe qui"  <- plugin.pdf.unassigned
+  "Archive"
+      "Archive"  <- ftype.archive
+      "Archivage"  <- opc.kind.archive
+  "{count} refused ({reason})"
+      "{count} refusés ({reason})"  <- server.app.wake.refused
+      "{count} refusé ({reason})"  <- server.app.wake.refused_one
+  "{count} scheduled"
+      "{count} planifiés"  <- server.app.wake.scheduled
+      "{count} planifié"  <- server.app.wake.scheduled_one
+  "Navigation"
+      "Navigation"  <- shortcuts.group.nav
+      "Volet de navigation"  <- sidenav.title
