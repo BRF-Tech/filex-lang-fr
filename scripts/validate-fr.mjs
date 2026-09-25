@@ -229,6 +229,7 @@ const IDENTICAL_OK = new Set([
   'apiMcp.fields.usernamesPlaceholder', // sample identifiers ("work, fishapp")
   'conn.tokens.rootPlaceholder', // syntax: storage://folder
   'e2e.recover.recovery_placeholder', // input mask XXXX-XXXX-…
+  'archivesAdmin.providerSevenZip', // product name: 7-Zip
   'appearance.namePlaceholder', // sample product name ("Acme Cloud")
 ]);
 function identicalAllowed(key, en) {

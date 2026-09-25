@@ -153,6 +153,12 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | search index | index de recherche | |
 | storage scan / scan exclusions | analyse / chemins exclus de l’analyse | the walk over a storage (*Intervalle d’analyse*); the same word as *analyse antivirus*, the context tells them apart |
 | catalogue (what the scan records) | catalogue / catalogué | "not catalogued" → *ne sont pas catalogués* |
+| catalog (verb) / cataloging (v0.44.0) | cataloguer / catalogage | *Tout cataloguer*, *Catalogage en cours* |
+| lazy catalog (a sync mode) | catalogue différé | as *chargement différé* for lazy loading; its behaviors *D’abord le dossier ouvert, le reste en arrière-plan* / *À l’ouverture uniquement*; the background pass → *parcours en arrière-plan* |
+| watch / watched (a folder, for changes made outside filex) | surveiller / surveillé | |
+| usage (the storage-used figure) | espace utilisé | as *{used} utilisés*; the *Utilisation et coût* page is a different thing |
+| archive / extract | archive / extraire, extraction | "Extract here" → *Extraire ici*; "solid archive" → *archive solide*; MiB → *Mio* (French IEC units) |
+| package manager | gestionnaire de paquets | Homebrew, winget and Snap stay as written |
 | pattern (glob) | motif (glob) | *Motif de chemin*; the pattern itself (`.git`, `*.tmp`, `downloads/incomplete/**`) stays as written |
 | emptying the trash / server log | vidage de la corbeille / journal du serveur | "Emptying the trash…" → *Vidage de la corbeille…* |
 | preview | aperçu | |
@@ -250,7 +256,8 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
   - A `_one` form is added **only where the French words change**. These read the same for every
     count and deliberately have none: `opc.percent`, `tour.progress`, `viewer.counter`,
     `viewer.page_n_of_m`, `inspector.versions.v`, `inspector.activity.version`,
-    `selection.count`, `sidenav.tags.more`, `tz.more`, `server.app.wake.beyond`.
+    `selection.count`, `sidenav.tags.more`, `tz.more`, `server.app.wake.beyond`,
+    `archive.dictionary_size_value`.
 - **Audit verbs are nouns.** `audit.phrase` is `{resource} : {verb}` and resources have both genders
   (*Corbeille*, *Règle de réplication* are feminine), so a participle would disagree half the time
   (*Corbeille : vidé*). Nouns never do: *Corbeille : vidage*, *Fichier : suppression*.

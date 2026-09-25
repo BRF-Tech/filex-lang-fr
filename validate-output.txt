@@ -3,15 +3,16 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : catalogue (filex 0.43.0) — 3588 strings (227 of them the server's: e-mails, public pages, notifications)
+  catalogue : catalogue (filex 0.44.0) — 3728 strings (233 of them the server's: e-mails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 3588 of 3588 strings; the other 0 show in English
-  139 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 3728 of 3728 strings; the other 0 show in English
+  145 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
-  10 plural key(s) lack a form for one of those categories and show the plain form for it
+  11 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
+  plural      archive.dictionary_size_value: lacks archive.dictionary_size_value_one
   plural      inspector.activity.version: lacks inspector.activity.version_one
   plural      inspector.versions.v: lacks inspector.versions.v_one
   plural      opc.percent: lacks opc.percent_one
@@ -26,21 +27,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             1832 strings
-                   explorer (plain {var})             1587 strings
-                   server (mails, public pages)       227 strings
-                   58 keys exist in both catalogues -> 3588 strings
+                   admin panel (vue-i18n)             1904 strings
+                   explorer (plain {var})             1649 strings
+                   server (mails, public pages)       233 strings
+                   58 keys exist in both catalogues -> 3728 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (3591 strings)
+  pack           : translations\fr.json  (3731 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 58 (one flat pack value serves both).
   identical English in both: 58
 
-Size: 236642 bytes of keys + values (limit 1048576).
+Size: 248084 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 51 short English labels translated more than one way (see below)
+Consistency: 52 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -140,6 +141,9 @@ Same English, different French (review — context may justify it):
   "Info"
       "Information"  <- notifications.severity.info
       "Infos"  <- ctx.info
+  "Archive"
+      "Archivage"  <- pendingOps.verb.archive, opc.kind.archive
+      "Archive"  <- ftype.archive, viewer.archive.root
   "Verified"
       "Vérifiée"  <- plugins.conformance.verified
       "Vérifié"  <- settings.smtp.verified
@@ -149,7 +153,7 @@ Same English, different French (review — context may justify it):
       "Annulé"  <- opc.status.aborted
   "Done"
       "Terminée"  <- queue.status.done
-      "Terminé"  <- access.done, e2e.recovery.done, opc.status.done, plugin.pdf.pad_done (+2)
+      "Terminé"  <- storages.catalog.fillerState.converged, access.done, e2e.recovery.done, opc.status.done (+3)
   "Move"
       "Déplacement"  <- queue.type.move, opc.kind.move
       "Déplacer"  <- ctx.move
@@ -165,6 +169,9 @@ Same English, different French (review — context may justify it):
   "Empty trash"
       "Vider la corbeille"  <- trash.empty, trash.empty_modal_title, trash.empty_action
       "Vidage de la corbeille"  <- opc.kind.trash
+  "Extract to folder"
+      "Dossier de destination"  <- archive.destination_folder
+      "Extraire dans un dossier"  <- archive.extract_to_folder
   "Star"
       "Favori"  <- col.star
       "Ajouter aux favoris"  <- ctx.star
@@ -187,9 +194,6 @@ Same English, different French (review — context may justify it):
   "Anyone"
       "Tout le monde"  <- filter.people.any
       "N’importe qui"  <- plugin.pdf.unassigned
-  "Archive"
-      "Archive"  <- ftype.archive
-      "Archivage"  <- opc.kind.archive
   "{count} refused ({reason})"
       "{count} refusés ({reason})"  <- server.app.wake.refused
       "{count} refusé ({reason})"  <- server.app.wake.refused_one
