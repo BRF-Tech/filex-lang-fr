@@ -10,7 +10,7 @@ data-only app (no module, nothing runs) that any filex **v0.43.0** or newer serv
 > spaces before `: ; ! ?` and inside « guillemets »). Terminology is fixed in
 > [`glossary.md`](glossary.md); please keep to it (or change it there first) when you correct a string.
 
-Version **0.1.1**, for filex 0.44.0 · 3,728 of 3,728 strings (100 %) of the v0.44.0 catalogue —
+Version **0.1.2**, for filex 0.45.0 · 3,752 of 3,752 strings (100 %) of the v0.45.0 catalogue —
 233 of them the text the server writes — plus 3 extra plural forms.
 
 ## Contents
@@ -20,7 +20,7 @@ Version **0.1.1**, for filex 0.44.0 · 3,728 of 3,728 strings (100 %) of the v0.
 | `filex-app.json` | The pack filex installs — written by `pack.mjs build` from `translations/` |
 | `translations/fr.json` | The translation — the file you edit: one flat `{ "<key>": "<text>" }` over both catalogues |
 | `glossary.md` | Terms, voice, typography, the syntax rules a string must keep, hard decisions, measured length fixes |
-| `catalogue/` | The v0.44.0 English catalogue + per-key context (renderer, grammar, where used) |
+| `catalogue/` | The v0.45.0 English catalogue + per-key context (renderer, grammar, where used) |
 | `scripts/pack.mjs` | `build` / `next` / `sync` — from the filex language-pack template |
 | `scripts/validate.mjs` | The platform validator — a verbatim copy of filex's `scripts/i18n-validate.mjs` |
 | `scripts/validate-fr.mjs` | The French checks on top: *vous* register, glossary lint, typography, length report |
@@ -28,7 +28,7 @@ Version **0.1.1**, for filex 0.44.0 · 3,728 of 3,728 strings (100 %) of the v0.
 | `validate-output.txt` | The last run of both validators |
 
 The repository follows the layout of the filex language-pack template, so `pack.mjs sync --from
-v0.45.0` picks up the strings a newer filex adds.
+v0.46.0` picks up the strings a newer filex adds.
 
 ## Correcting a string
 

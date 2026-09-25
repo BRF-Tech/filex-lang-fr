@@ -159,6 +159,9 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | usage (the storage-used figure) | espace utilisé | as *{used} utilisés*; the *Utilisation et coût* page is a different thing |
 | archive / extract | archive / extraire, extraction | "Extract here" → *Extraire ici*; "solid archive" → *archive solide*; MiB → *Mio* (French IEC units) |
 | package manager | gestionnaire de paquets | Homebrew, winget and Snap stay as written |
+| attempt / attempt timeout / give up after (a storage's network settings, v0.45.0) | tentative / délai par tentative / abandonner après | as *Délai de connexion*; "Attempts per request" → *Tentatives par requête*; retrying → *nouvelles tentatives*, "is never retried" → *n’est jamais retenté*; an S3 "store" is *le service*, as in the other S3 hints |
+| drag-out download (audit, v0.45.0) | téléchargement par glisser-déposer | an audit verb, so a noun (see *Audit verbs are nouns*) |
+| what an update policy does here (badge, v0.45.0) | *Annonce seulement* / *Installe les correctifs* / *Installe les versions mineures* / *Vérification désactivée* | third person, the install is the subject; the policy's own name stays an infinitive (*annoncer seulement*) |
 | pattern (glob) | motif (glob) | *Motif de chemin*; the pattern itself (`.git`, `*.tmp`, `downloads/incomplete/**`) stays as written |
 | emptying the trash / server log | vidage de la corbeille / journal du serveur | "Emptying the trash…" → *Vidage de la corbeille…* |
 | preview | aperçu | |
