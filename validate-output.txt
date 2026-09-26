@@ -3,12 +3,12 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : catalogue (filex 0.45.0) — 3752 strings (233 of them the server's: e-mails, public pages, notifications)
+  catalogue : catalogue (filex 0.46.0) — 3861 strings (233 of them the server's: e-mails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 3752 of 3752 strings; the other 0 show in English
-  145 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 3861 of 3861 strings; the other 0 show in English
+  146 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   11 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
@@ -27,21 +27,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             1928 strings
-                   explorer (plain {var})             1662 strings
+                   admin panel (vue-i18n)             1964 strings
+                   explorer (plain {var})             1738 strings
                    server (mails, public pages)       233 strings
-                   71 keys exist in both catalogues -> 3752 strings
+                   74 keys exist in both catalogues -> 3861 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (3755 strings)
+  pack           : translations\fr.json  (3864 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
-Keys shared by both catalogues: 71 (one flat pack value serves both).
-  identical English in both: 71
+Keys shared by both catalogues: 74 (one flat pack value serves both).
+  identical English in both: 74
 
-Size: 253401 bytes of keys + values (limit 1048576).
+Size: 261662 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 52 short English labels translated more than one way (see below)
+Consistency: 55 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -169,6 +169,9 @@ Same English, different French (review — context may justify it):
   "Empty trash"
       "Vider la corbeille"  <- trash.empty, trash.empty_modal_title, trash.empty_action
       "Vidage de la corbeille"  <- opc.kind.trash
+  "Restore"
+      "Restaurer"  <- trash.restore, versions.restore, ctx.restore, inspector.versions.restore
+      "Restauration"  <- opc.kind.restore
   "Extract to folder"
       "Dossier de destination"  <- archive.destination_folder
       "Extraire dans un dossier"  <- archive.extract_to_folder
@@ -187,6 +190,12 @@ Same English, different French (review — context may justify it):
   "Cut"
       "Couper"  <- ctx.cut, shortcuts.cut
       "Coupé"  <- toast.cut
+  "Delete permanently"
+      "Supprimer définitivement"  <- ctx.delete_perm, modal.delete.permanent_confirm
+      "Suppression définitive"  <- opc.kind.purge
+  "Rename"
+      "Renommer"  <- ctx.rename, modal.rename.title, shortcuts.rename
+      "Renommage"  <- opc.kind.rename
   "Up one level"
       "Dossier parent"  <- destpicker.up
       "Remonter d’un niveau"  <- public.up

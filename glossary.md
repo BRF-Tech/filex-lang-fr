@@ -163,6 +163,9 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | drag-out download (audit, v0.45.0) | téléchargement par glisser-déposer | an audit verb, so a noun (see *Audit verbs are nouns*) |
 | what an update policy does here (badge, v0.45.0) | *Annonce seulement* / *Installe les correctifs* / *Installe les versions mineures* / *Vérification désactivée* | third person, the install is the subject; the policy's own name stays an infinitive (*annoncer seulement*) |
 | storage order (navigation panel and admin Storages, v0.46.0) | *Monter* / *Descendre* / *Trier par nom* / *Utiliser l’ordre par défaut* | *Rétablir l’ordre par défaut* on the admin page |
+| queued purge / restore / rename (operations panel and admin tray, v0.47.0) | *Suppression définitive* / *Restauration* / *Renommage* | nouns in both places, as *Copie*, *Déplacement*; column "Deleted by" → *Supprimé par* |
+| a count that failed, beside the one that worked (v0.47.0) | *{failed} en échec* | number-neutral, as in `access.ui.mail_partial`: *3 éléments restaurés ; 1 en échec : …* — it reads right whatever `{failed}` is, also in a `_one` form (which French shows for 0 too) |
+| a dialog closed while it works (v0.47.0) | *Continuer* / *Arrêter et fermer* | "this page says when it is done" → *cette page vous préviendra quand …* |
 | pattern (glob) | motif (glob) | *Motif de chemin*; the pattern itself (`.git`, `*.tmp`, `downloads/incomplete/**`) stays as written |
 | emptying the trash / server log | vidage de la corbeille / journal du serveur | "Emptying the trash…" → *Vidage de la corbeille…* |
 | preview | aperçu | |
