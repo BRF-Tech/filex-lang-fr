@@ -1897,6 +1897,8 @@
       "install.dl.win_portable_hint": "S’exécute depuis n’importe où — une clé USB, le dossier Téléchargements — et conserve ses fichiers à côté de lui. Ne se met pas à jour automatiquement · ~92 Mo",
       "install.dl.win_setup": "Programme d’installation Windows (.exe)",
       "install.dl.win_setup_hint": "Installe filex, l’ajoute au menu Démarrer et se met à jour automatiquement · ~92 Mo",
+      "install.dl.win_store": "Microsoft Store",
+      "install.dl.win_store_hint": "Signé par Microsoft, installé et tenu à jour par le Store — sans avertissement SmartScreen",
       "install.expand": "Afficher les détails",
       "install.install": "Installer",
       "install.iosInstructions": "Appuyez sur le bouton Partager, puis sur « Sur l’écran d’accueil ».",
