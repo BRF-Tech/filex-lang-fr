@@ -252,7 +252,8 @@ const GLOSSARY_LINT = [
   [/\bpoubelle\b/i, 'use "corbeille" for "trash"'],
   [/(?<![\p{L}])réglages?(?![\p{L}])/iu, 'use "paramètres" for "settings"'],
   // Not before "/": a path segment the reader types (downloads/incomplete/**) is a literal, not prose.
-  [/(?<![\p{L}-])(tokens?|uploads?|downloads?|plugins?|tags?)(?![\p{L}:/-])/iu, 'English word left in prose (glossary: jeton / téléverser / télécharger / extension / étiquette)'],
+  // Not beside "_": a part of an environment variable (FILEX_APP_PLUGIN_UPDATE_CHECK) is a literal too.
+  [/(?<![\p{L}_-])(tokens?|uploads?|downloads?|plugins?|tags?)(?![\p{L}_:/-])/iu, 'English word left in prose (glossary: jeton / téléverser / télécharger / extension / étiquette)'],
   [/\bappli\b/i, 'use "application"'],
   [/\bmodules? de stockage\b/i, 'storage plugin → "extension de stockage"'],
   [/\bétiquette\b.*\b(jeton|clé|token)\b|\b(jeton|clé)\b.*\bétiquette\b/i, 'a token/key "label" is a "libellé", not an "étiquette"'],

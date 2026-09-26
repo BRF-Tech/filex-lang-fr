@@ -10,8 +10,8 @@ data-only app (no module, nothing runs) that any filex **v0.43.0** or newer serv
 > spaces before `: ; ! ?` and inside « guillemets »). Terminology is fixed in
 > [`glossary.md`](glossary.md); please keep to it (or change it there first) when you correct a string.
 
-Version **0.1.4**, for filex 0.47.0 · 3,861 of 3,861 strings (100 %) of the v0.47.0 catalogue —
-233 of them the text the server writes — plus 3 extra plural forms.
+Version **0.1.4**, for filex 0.47.0 · 3,911 of 3,911 strings (100 %) of the v0.47.0 catalogue —
+240 of them the text the server writes — plus 3 extra plural forms.
 
 ## Contents
 

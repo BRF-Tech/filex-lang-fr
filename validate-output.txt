@@ -3,12 +3,12 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : catalogue (filex 0.46.0) — 3861 strings (233 of them the server's: e-mails, public pages, notifications)
+  catalogue : catalogue (filex 0.46.1) — 3911 strings (240 of them the server's: e-mails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 3861 of 3861 strings; the other 0 show in English
-  146 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 3911 of 3911 strings; the other 0 show in English
+  147 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   11 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
@@ -27,21 +27,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             1964 strings
+                   admin panel (vue-i18n)             2007 strings
                    explorer (plain {var})             1738 strings
-                   server (mails, public pages)       233 strings
-                   74 keys exist in both catalogues -> 3861 strings
+                   server (mails, public pages)       240 strings
+                   74 keys exist in both catalogues -> 3911 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (3864 strings)
+  pack           : translations\fr.json  (3914 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 74 (one flat pack value serves both).
   identical English in both: 74
 
-Size: 261662 bytes of keys + values (limit 1048576).
+Size: 266494 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 55 short English labels translated more than one way (see below)
+Consistency: 56 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -89,6 +89,9 @@ Same English, different French (review — context may justify it):
   "Install"
       "Installer"  <- appPlugins.wizard.install, install.install, plugins.install
       "Installation"  <- appPlugins.wizard.steps.done
+  "New"
+      "Nouvelle"  <- appPlugins.wizard.newPermission
+      "Nouveau"  <- appearance.previewNew, drive.new
   "Upload"
       "Téléverser"  <- appearance.previewUpload, plugin.sig.mode_upload, toolbar.upload
       "Téléversement"  <- audit.target.upload, opc.kind.upload
