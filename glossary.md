@@ -162,6 +162,7 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | attempt / attempt timeout / give up after (a storage's network settings, v0.45.0) | tentative / délai par tentative / abandonner après | as *Délai de connexion*; "Attempts per request" → *Tentatives par requête*; retrying → *nouvelles tentatives*, "is never retried" → *n’est jamais retenté*; an S3 "store" is *le service*, as in the other S3 hints |
 | drag-out download (audit, v0.45.0) | téléchargement par glisser-déposer | an audit verb, so a noun (see *Audit verbs are nouns*) |
 | what an update policy does here (badge, v0.45.0) | *Annonce seulement* / *Installe les correctifs* / *Installe les versions mineures* / *Vérification désactivée* | third person, the install is the subject; the policy's own name stays an infinitive (*annoncer seulement*) |
+| storage order (navigation panel and admin Storages, v0.46.0) | *Monter* / *Descendre* / *Trier par nom* / *Utiliser l’ordre par défaut* | *Rétablir l’ordre par défaut* on the admin page |
 | pattern (glob) | motif (glob) | *Motif de chemin*; the pattern itself (`.git`, `*.tmp`, `downloads/incomplete/**`) stays as written |
 | emptying the trash / server log | vidage de la corbeille / journal du serveur | "Emptying the trash…" → *Vidage de la corbeille…* |
 | preview | aperçu | |
