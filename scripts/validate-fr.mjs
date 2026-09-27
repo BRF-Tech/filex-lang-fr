@@ -232,6 +232,10 @@ const IDENTICAL_OK = new Set([
   'archivesAdmin.providerSevenZip', // product name: 7-Zip
   'install.dl.win_store', // product name: Microsoft Store
   'appearance.namePlaceholder', // sample product name ("Acme Cloud")
+  'appPlugins.wizard.uiGroup.title', // "Interface" is the French word too
+  'install.dl.linux_snap', // product name: Snap Store
+  'install.dl.mac_brew', // product name: Homebrew
+  'install.dl.rpm', // distribution names + file type: Fedora / openSUSE (.rpm)
 ]);
 function identicalAllowed(key, en) {
   if (IDENTICAL_OK.has(key)) return true;
