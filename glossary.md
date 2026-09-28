@@ -227,6 +227,8 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | approve / reject (a request) | approuver / rejeter | *rejeter* leaves *refuser* to Deny; audit nouns *approbation* / *rejet* / *expiration* |
 | Monitor (a permission) | Supervision | |
 | starting role for SSO groups | rôle de départ pour les groupes SSO | |
+| an app permission's Default (v0.49.0, role and person editors) | Par défaut | the choice beside *Autoriser* / *Refuser*; with what it comes to: *Par défaut (autorisé)* / *Par défaut (refusé)*; the source after « · » → *valeur par défaut de l’application*; the app's own default: *Valeur par défaut de l’application : tout le monde / personnes pouvant modifier des fichiers / administrateurs uniquement* |
+| a role's name in other languages (v0.49.0) | nom et description dans d’autres langues | *Nom du rôle ({language})*, *Description ({language})*; "{count} languages" → *{count} langues* (three forms, as every admin plural) |
 
 **v0.49.0 (roles and permissions) — notes:**
 
