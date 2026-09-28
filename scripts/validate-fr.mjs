@@ -246,9 +246,10 @@ function identicalAllowed(key, en) {
 /* ── register / glossary lint (vous, standard French) ──────────────────── */
 const TU_PRONOUNS = /(^|[^\p{L}])(tu|toi|ton|ta|tes|te|t[’'])(?=[^\p{L}]|$)/iu;
 const TU_IMPERATIVE_START =
-  /(^|[.!?—:]\s+|^\s*)(Clique|Saisis|Choisis|Sélectionne|Ouvre|Essaie|Essaye|Vérifie|Ajoute|Utilise|Appuie|Fais|Glisse|Dépose|Colle|Ferme|Attends|Demande|Crée|Active|Désactive|Coche|Supprime|Indique|Configure|Télécharge|Téléverse|Regarde|Cherche|Enregistre|Génère|Mets|Tiens|Va|Sors|Dis|Réessaie|Reviens|Tape|Renseigne|Relance)\s/u;
+  /(^|[.!?—:]\s+|^\s*)(Clique|Saisis|Choisis|Sélectionne|Ouvre|Essaie|Essaye|Vérifie|Ajoute|Utilise|Appuie|Fais|Glisse|Dépose|Colle|Ferme|Attends|Demande(?!\sd[e’'])|Crée|Active|Désactive|Coche|Supprime|Indique|Configure|Télécharge|Téléverse|Regarde|Cherche|Enregistre|Génère|Mets|Tiens|Va|Sors|Dis|Réessaie|Reviens|Tape|Renseigne|Relance)\s/u;
 // "Recherche", "Copie", "Entre", "Installe", "Exécute" are left out on purpose: in UI French they are
 // far more often a noun, a preposition or a third person ("Installe filex…") than a "tu" imperative.
+// "Demande d’…" / "Demande de …" is the noun (« Demande d’extension », v0.49.0 plugin requests), not "demande !".
 // Keys where a glossary lint hit is a proper name: macOS's own « Réglages Système », a git "tag".
 const GLOSSARY_OK = new Set(['install.dl.dmg_hint', 'appPlugins.wizard.ref']);
 const GLOSSARY_LINT = [

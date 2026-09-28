@@ -212,6 +212,28 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | checksum | somme de contrôle | |
 | expiry / expires | expiration / expire le | |
 | offline / online | hors ligne / en ligne | |
+| role (a named set of permissions; every person has exactly one, v0.49.0) | rôle (pl. *rôles*) | nav and page → *Rôles*; "New role" → *Nouveau rôle*; a custom role's name is the administrator's text, never translated, in « » in prose (*le rôle « Stagiaires »*) |
+| built-in role | rôle intégré | *Administrateur* / *Utilisateur* / *Lecteur*, as `users.roles.*`; badge "Built-in" → *Intégré*; audit resource → *Rôle intégré* |
+| custom role | rôle personnalisé | badge "Custom" → *Personnalisé* |
+| permission (what a role allows, v0.49.0) | autorisation | the same word as an API key's and an app's permission; "{count} of {total} permissions" → *Autorisations : {count} sur {total}*; group buttons "All" / "None" → *Toutes* / *Aucune* |
+| exception (set for one person only) | exception | "Exceptions for this person" → *Exceptions pour cette personne*; Users-list badge → *Avec exceptions* |
+| Inherit / Allow / Deny (buttons) | Hériter / Autoriser / Refuser | infinitives, as buttons; a role's summary "Allows: / Denies:" → *Autorise : / Refuse :* |
+| Allowed / Denied (the result beside a permission) | Autorisé / Refusé | masculine, impersonal (*c’est autorisé*), as *Non autorisé*; the source after « · » is a lowercase fragment: *rôle intégré*, *rôle « X »*, *exception pour cette personne*, *administrateurs uniquement*, *compte en lecture seule*, *rôle « X » désactivé* |
+| preset | préréglage | as `replica.settings.cronPreset`; *Admin complet* / *Utilisateur standard* / *Lecture seule* / *Téléversement uniquement* / *Invité*; the badge of a person whose permissions match no preset → *Autorisations personnalisées* (not *Personnalisé*, the custom-role badge) |
+| limit (what a role restricts) | limite | "Limits from roles" → *Limites issues des rôles* |
+| Folder access (the per-file and per-folder grants page, renamed in v0.49.0) | Accès aux dossiers | nav, page title and audit resource; kept apart from *autorisation*. What the page lists are still *droits d’accès* |
+| switch off (a role) | désactiver / désactivé | badge "Off" → *Désactivé* (le rôle) |
+| plugin request / install request | demande d’extension / demande d’installation | the umbrella "plugin" is *extension*, as `nav.plugins`; statuses are feminine (la demande): *En attente* / *Approuvée* / *Rejetée* / *Expirée* / *Source modifiée* |
+| approve / reject (a request) | approuver / rejeter | *rejeter* leaves *refuser* to Deny; audit nouns *approbation* / *rejet* / *expiration* |
+| Monitor (a permission) | Supervision | |
+| starting role for SSO groups | rôle de départ pour les groupes SSO | |
+
+**v0.49.0 (roles and permissions) — notes:**
+
+- `server.perm.denied.*`: `{action}` is a lowercase infinitive phrase (*supprimer des fichiers*). The negative sentences say *autorisé à {action}*, never *de {action}*, which would need elision before *utiliser*, *ajouter*, *étiqueter*, *exécuter*. The infinitive's subject is always third person (*votre compte*, *un administrateur*, *un compte*), so the reflexive *se connecter* reads right in all 168 renderings. `override` quotes the phrase as the permission's name: *l’autorisation « {action} »*.
+- Audit verbs stay nouns: *Utilisateur : changement de rôle*, *Utilisateur : modification des exceptions*, *Rôle intégré : modification des autorisations*, *Demande d’extension : clôture après modification de sa source*.
+- `permissions.customBadge` is *Avec exceptions*: plain *Exceptions* is identical to the English, and `validate-fr.mjs` reports that as an ERROR.
+- The REGISTER warnings on *Demande d’…* are false positives. It is the noun, not a *tu* imperative.
 
 ## Decisions that were hard (and why)
 
