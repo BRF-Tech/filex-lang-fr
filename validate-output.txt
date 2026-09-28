@@ -3,12 +3,12 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : catalogue (filex 0.48.1) — 4242 strings (257 of them the server's: emails, public pages, notifications)
+  catalogue : catalogue (filex 0.49.0) — 4501 strings (295 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 4242 of 4242 strings; the other 0 show in English
-  153 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 4501 of 4501 strings; the other 0 show in English
+  164 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   12 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
@@ -28,21 +28,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             2083 strings
+                   admin panel (vue-i18n)             2304 strings
                    explorer (plain {var})             2142 strings
-                   server (mails, public pages)       257 strings
-                   240 keys exist in both catalogues -> 4242 strings
+                   server (mails, public pages)       295 strings
+                   240 keys exist in both catalogues -> 4501 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (4245 strings)
+  pack           : translations\fr.json  (4504 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 240 (one flat pack value serves both).
   identical English in both: 240
 
-Size: 300232 bytes of keys + values (limit 1048576).
+Size: 318643 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 58 short English labels translated more than one way (see below)
+Consistency: 62 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -54,18 +54,22 @@ Same English, different French (review — context may justify it):
   "All"
       "Tout"  <- apiMcp.scopeAll, search.scopeAll
       "Tous"  <- common.all
+      "Toutes"  <- permissions.all
   "Delete"
       "Suppression"  <- apiMcp.scopeName.delete, queue.type.delete, opc.kind.delete
-      "Supprimer"  <- common.delete, versions.purge, ctx.delete, shortcuts.delete
+      "Supprimer"  <- common.delete, permissions.items.files.delete.label, versions.purge, ctx.delete (+1)
   "Review update"
       "Vérifier la mise à jour"  <- appPlugins.actions.reviewUpdate
       "Examiner la mise à jour"  <- plugins.actions.reviewUpdate
+  "Upgrade"
+      "Mettre à jour"  <- appPlugins.actions.upgrade, appPlugins.wizard.upgrade, plugins.upgrade.action
+      "Mise à jour"  <- pluginRequests.op.upgrade
   "{name} removed"
       "Application {name} retirée"  <- appPlugins.deleted
       "{name} retirée"  <- plugins.deleted
   "Enabled"
       "Activée"  <- appPlugins.detail.overrides.enabled, appPlugins.fields.enabled, plugins.fields.enabled, profile.totp.enabled (+1)
-      "Activé"  <- common.enabled, webhooks.fields.enabled
+      "Activé"  <- common.enabled, permissions.rules.enabled, webhooks.fields.enabled
   "Due"
       "Échéance"  <- appPlugins.detail.schedule.due
       "Prévu"  <- appPlugins.detail.schedule.statuses.due
@@ -83,7 +87,7 @@ Same English, different French (review — context may justify it):
       "Téléversé"  <- usage.buckets.uploaded
   "Off"
       "Désactivée"  <- appPlugins.state.disabled, plugins.state.disabled
-      "Désactivé"  <- authProviders.status.disabled
+      "Désactivé"  <- authProviders.status.disabled, permissions.rules.disabled
   "{name} upgraded"
       "Application {name} mise à jour"  <- appPlugins.upgraded
       "Extension {name} mise à jour"  <- plugins.upgrade.done
@@ -95,10 +99,13 @@ Same English, different French (review — context may justify it):
       "Ajoutée"  <- conn.sshkeys.col.added
   "Install"
       "Installer"  <- appPlugins.wizard.install, install.install, plugins.install
-      "Installation"  <- appPlugins.wizard.steps.done
+      "Installation"  <- appPlugins.wizard.steps.done, pluginRequests.op.install
   "New"
       "Nouvelle"  <- appPlugins.wizard.newPermission
       "Nouveau"  <- appearance.previewNew, drive.new
+  "Review"
+      "Vérification"  <- appPlugins.wizard.steps.review
+      "Examiner"  <- pluginRequests.actions.review
   "Upload"
       "Téléverser"  <- appearance.previewUpload, plugin.sig.mode_upload, toolbar.upload
       "Téléversement"  <- audit.target.upload, opc.kind.upload
@@ -123,6 +130,9 @@ Same English, different French (review — context may justify it):
   "Disabled"
       "Désactivé"  <- common.disabled, external.overall.disabled, external.states.disabled, conn.list.disabled
       "Désactivée"  <- profile.totp.disabled
+  "None"
+      "Aucun"  <- common.none, usage.fields.providerNone
+      "Aucune"  <- permissions.none
   "Search"
       "Rechercher"  <- common.search, advsearch.submit, toolbar.search, viewer.search
       "Recherche"  <- nav.search, tour.step.search.title
@@ -142,6 +152,9 @@ Same English, different French (review — context may justify it):
   "Sign in"
       "Se connecter"  <- login.submit
       "Connexion"  <- login.title
+  "Expired"
+      "Expiré"  <- myShares.expired, server.public.err_drop_expired_title
+      "Expirée"  <- pluginRequests.status.expired
   "Sync runs"
       "Synchronisations"  <- nav.sync
       "Exécutions de synchronisation"  <- sync.title
@@ -154,6 +167,15 @@ Same English, different French (review — context may justify it):
   "Archive"
       "Archivage"  <- pendingOps.verb.archive, opc.kind.archive
       "Archive"  <- ftype.archive, viewer.archive.root
+  "Move"
+      "Déplacer"  <- permissions.items.files.move.label, ctx.move
+      "Déplacement"  <- queue.type.move, opc.kind.move
+  "Delete permanently"
+      "Supprimer définitivement"  <- permissions.items.files.purge.label, ctx.delete_perm, modal.delete.permanent_confirm
+      "Suppression définitive"  <- opc.kind.purge
+  "Rename"
+      "Renommer"  <- permissions.items.files.rename.label, ctx.rename, modal.rename.title, shortcuts.rename
+      "Renommage"  <- opc.kind.rename
   "Verified"
       "Vérifiée"  <- plugins.conformance.verified
       "Vérifié"  <- settings.smtp.verified
@@ -164,9 +186,6 @@ Same English, different French (review — context may justify it):
   "Done"
       "Terminée"  <- queue.status.done
       "Terminé"  <- storages.catalog.fillerState.converged, access.done, e2e.recovery.done, opc.status.done (+3)
-  "Move"
-      "Déplacement"  <- queue.type.move, opc.kind.move
-      "Déplacer"  <- ctx.move
   "Look in"
       "Rechercher dans"  <- search.scope
       "Chercher dans"  <- advsearch.scope.label
@@ -200,12 +219,6 @@ Same English, different French (review — context may justify it):
   "Cut"
       "Couper"  <- ctx.cut, shortcuts.cut
       "Coupé"  <- toast.cut
-  "Delete permanently"
-      "Supprimer définitivement"  <- ctx.delete_perm, modal.delete.permanent_confirm
-      "Suppression définitive"  <- opc.kind.purge
-  "Rename"
-      "Renommer"  <- ctx.rename, modal.rename.title, shortcuts.rename
-      "Renommage"  <- opc.kind.rename
   "Up one level"
       "Dossier parent"  <- destpicker.up
       "Remonter d’un niveau"  <- public.up
