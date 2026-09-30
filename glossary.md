@@ -114,7 +114,7 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | field | champ | |
 | permission | autorisation | "Permissions" panel → *Autorisations* |
 | grant (noun) / grant (verb) | droit d'accès / accorder | "Grants" → *Droits d'accès*; "Grant revoked" → *Droit d'accès révoqué* |
-| access | accès | "People with access" → *Personnes ayant accès* |
+| access | accès | "People with access" → *Personnes ayant accès* (the share dialog's section); "Who has access" (`access.ui.people_with_access`, v0.50.0) → *Qui a accès* |
 | revoke | révoquer | |
 | owner | propriétaire | |
 | administrator / admin | administrateur / admin | "Admin panel" → *Panneau d'administration*; "Admins only" → *Administrateurs uniquement* |
@@ -229,6 +229,22 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | starting role for SSO groups | rôle de départ pour les groupes SSO | |
 | an app permission's Default (v0.49.0, role and person editors) | Par défaut | the choice beside *Autoriser* / *Refuser*; with what it comes to: *Par défaut (autorisé)* / *Par défaut (refusé)*; the source after « · » → *valeur par défaut de l’application*; the app's own default: *Valeur par défaut de l’application : tout le monde / personnes pouvant modifier des fichiers / administrateurs uniquement* |
 | a role's name in other languages (v0.49.0) | nom et description dans d’autres langues | *Nom du rôle ({language})*, *Description ({language})*; "{count} languages" → *{count} langues* (three forms, as every admin plural) |
+| group (a named set of people, v0.50.0) | groupe (pl. *groupes*) | nav and page → *Groupes*; "New group" → *Nouveau groupe*; its people are *membres*; a group's name is the administrator's text, in « » in prose (*le groupe « Compta »*); "through the group" → *via le groupe « X »*; "How they joined" → *Origine*, values *Ajout manuel* / *SSO*; audit resource "Group folder access" → *Accès aux dossiers d’un groupe* |
+| SSO group (what a sign-in carries) | groupe SSO | "carries" → *transmet*; "Role priority" → *Priorité du rôle* |
+| identity provider | fournisseur d’identité | the admin page stays *Fournisseurs d’authentification*; a sign-in provider in a label → *fournisseur de connexion*, as the audit resource |
+| sign-in security (v0.50.0) | sécurité de connexion | nav, page title, audit resource and target |
+| wrong attempt / failed attempt | tentative échouée | ONE term for both English words (the admin panel says "wrong", the server's sentences "failed"); "Wrong attempts per account" → *Tentatives échouées par compte*; "Wrong credentials" → *Identifiants incorrects* |
+| sign-in lock (an account or an address locked out after failed attempts) | verrouillage (pl. *verrouillages*) / verrouillé | ⚠ deliberately not *verrou*, which stays a file lock (`appPlugins.detail.locks.*`): *verrouillage* is the French Windows builds' word for an account lockout (*Stratégie de verrouillage du compte*). "First lock" / "Longest lock" → *Premier verrouillage* / *Verrouillage le plus long*; "Lock step" → *Palier de verrouillage*; "Locks" → *Verrouillages*; the event "Locked" → *Verrouillé*, as `applock.badge` |
+| lift the lock (a sign-in lock) | lever le verrouillage | "Lock lifted" → *Verrouillage levé*; audit verb → *levée du verrouillage*; "Lifted by an administrator" → *Levé par un administrateur*. The consistency report lists "Lift the lock" twice (*Lever le verrou* for a file lock): intended |
+| counting window | fenêtre de comptage | status "Counting" → *Comptage en cours* |
+| allowed addresses / allow-list | adresses autorisées | the address is exempt (*Aucune adresse n’est exemptée*), so the event "Allow-list pass" → *Exemption (adresse autorisée)* |
+| trusted proxy | proxy de confiance (pl. *proxys de confiance*) | as `authProviders.fields.trusted_proxies`; loopback → *bouclage*; link-local → *lien-local*; private networks → *réseaux privés*; "classes of address" → *catégories d’adresses* |
+| door (where a password is typed: the web form, WebDAV, FTP, SFTP, S3) | point d’entrée | "Web form" → *Formulaire web* |
+| test account (the real account a sign-in test uses) | compte de test | as *test* for a probe; "signs a real account in" → *connecte un vrai compte* |
+| super administrator | super-administrateur | |
+| first sign-in rule | règle de première connexion | "Open an account at the first sign-in" → *Créer un compte à la première connexion* |
+| operating-system account / Linux account / Windows account | compte du système d’exploitation / compte Linux / compte Windows | Windows' built-in account and policy names are the French builds' own (*Administrateur*, *Invité*, *AUTORITE NT*, *Accéder à cet ordinateur à partir du réseau*) - see *Decisions* |
+| realm (an organization's sign-in name on the login page) | realm (*le realm*) | kept, as *claim*: the word identity providers (Keycloak) show. *Domaine* is taken by the Windows domain and the e-mail domain of the same feature. The label *Realm* is identical to the English and allowed in `validate-fr.mjs` (`IDENTICAL_OK`) |
 
 **v0.49.0 (roles and permissions) — notes:**
 
@@ -236,6 +252,14 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 - Audit verbs stay nouns: *Utilisateur : changement de rôle*, *Utilisateur : modification des exceptions*, *Rôle intégré : modification des autorisations*, *Demande d’extension : clôture après modification de sa source*.
 - `permissions.customBadge` is *Avec exceptions*: plain *Exceptions* is identical to the English, and `validate-fr.mjs` reports that as an ERROR.
 - The REGISTER warnings on *Demande d’…* are false positives. It is the noun, not a *tu* imperative.
+
+**v0.50.0 (pre-release: sign-in security, operating-system accounts, realms and groups) - notes:**
+
+- `server.login.failed_remaining*`: `{limit}` is the number of the failed attempt at which the lock falls. *à la tentative échouée n° {limit}* reads right for every number; an ordinal (*{limit}e*) would be wrong for 1. The `_one` forms keep `{count}` (French `one` is 0 and 1: *Il vous reste 0 tentative*).
+- `server.login.wait_minutes` / `_one` are *{count} minutes* / *{count} minute*, the same as the English: *minute* is in `validate-fr.mjs`'s KEEP_WORDS.
+- `server.perm.denied.rule_group` / `role_off_group` keep the v0.49.0 pattern (*n’autorise pas votre compte à {action}*, *votre compte n’est donc pas autorisé à {action}*); the group comes in as *que vous avez via le groupe « {group} »*.
+- The PAM hints' code spans stay byte for byte, `<user>` included: a token inside a command the reader copies is part of the command, and `validate-fr.mjs` requires identical code spans. (The angle-token rule above is for prose syntax.)
+- The new admin plurals keep three forms (`groups.members`, `groups.folders`, `permissions.rules.groups`, `permissions.rules.viaGroups`): *Aucun membre | {count} membre | {count} membres*.
 
 ## Decisions that were hard (and why)
 
