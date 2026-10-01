@@ -3,20 +3,21 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : catalogue (filex 0.49.0) — 4501 strings (295 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.49.0) — 5247 strings (344 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 4501 of 4501 strings; the other 0 show in English
-  164 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 5247 of 5247 strings; the other 0 show in English
+  181 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
-  12 plural key(s) lack a form for one of those categories and show the plain form for it
+  13 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
   plural      archive.dictionary_size_value: lacks archive.dictionary_size_value_one
   plural      drafts.count_of: lacks drafts.count_of_one
   plural      inspector.activity.version: lacks inspector.activity.version_one
   plural      inspector.versions.v: lacks inspector.versions.v_one
   plural      opc.percent: lacks opc.percent_one
+  plural      peek.more: lacks peek.more_one
   plural      selection.count: lacks selection.count_one
   plural      server.app.wake.beyond: lacks server.app.wake.beyond_one
   plural      sidenav.tags.more: lacks sidenav.tags.more_one
@@ -28,21 +29,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             2304 strings
-                   explorer (plain {var})             2142 strings
-                   server (mails, public pages)       295 strings
-                   240 keys exist in both catalogues -> 4501 strings
+                   admin panel (vue-i18n)             2950 strings
+                   explorer (plain {var})             2192 strings
+                   server (mails, public pages)       344 strings
+                   239 keys exist in both catalogues -> 5247 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (4504 strings)
+  pack           : translations\fr.json  (5250 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
-Keys shared by both catalogues: 240 (one flat pack value serves both).
-  identical English in both: 240
+Keys shared by both catalogues: 239 (one flat pack value serves both).
+  identical English in both: 239
 
-Size: 318700 bytes of keys + values (limit 1048576).
+Size: 386415 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 62 short English labels translated more than one way (see below)
+Consistency: 69 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -57,7 +58,7 @@ Same English, different French (review — context may justify it):
       "Toutes"  <- permissions.all
   "Delete"
       "Suppression"  <- apiMcp.scopeName.delete, queue.type.delete, opc.kind.delete
-      "Supprimer"  <- common.delete, permissions.items.files.delete.label, versions.purge, ctx.delete (+1)
+      "Supprimer"  <- authProviders.delete, common.delete, permissions.items.files.delete.label, versions.purge (+2)
   "Review update"
       "Vérifier la mise à jour"  <- appPlugins.actions.reviewUpdate
       "Examiner la mise à jour"  <- plugins.actions.reviewUpdate
@@ -67,6 +68,9 @@ Same English, different French (review — context may justify it):
   "{name} removed"
       "Application {name} retirée"  <- appPlugins.deleted
       "{name} retirée"  <- plugins.deleted
+  "Lift the lock"
+      "Lever le verrou"  <- appPlugins.detail.locks.unlock
+      "Lever le verrouillage"  <- loginSecurity.locks.unlock
   "Enabled"
       "Activée"  <- appPlugins.detail.overrides.enabled, appPlugins.fields.enabled, plugins.fields.enabled, profile.totp.enabled (+1)
       "Activé"  <- common.enabled, permissions.rules.enabled, webhooks.fields.enabled
@@ -75,7 +79,10 @@ Same English, different French (review — context may justify it):
       "Prévu"  <- appPlugins.detail.schedule.statuses.due
   "Failed"
       "Échec"  <- appPlugins.detail.schedule.statuses.failed, appPlugins.state.failed, appearance.previewDanger, notifications.webhookStatus.failed (+3)
-      "Échecs"  <- queue.stats.failed, replica.report.fields.failedCount
+      "Échecs"  <- queue.stats.failed, replica.report.fields.failedCount, tools.thumbs.count.failed
+  "Skipped"
+      "Ignoré"  <- appPlugins.detail.schedule.statuses.skipped
+      "Ignorés"  <- tools.thumbs.count.skipped
   "Updated"
       "Mise à jour le"  <- appPlugins.detail.updated
       "Mis à jour"  <- common.updated, dashboard.updatedFiles, sync.fields.updated
@@ -86,7 +93,7 @@ Same English, different French (review — context may justify it):
       "Téléversée"  <- appPlugins.source.upload
       "Téléversé"  <- usage.buckets.uploaded
   "Off"
-      "Désactivée"  <- appPlugins.state.disabled, plugins.state.disabled
+      "Désactivée"  <- appPlugins.state.disabled, appPlugins.wizard.fileTypes.place.off, defaultApps.editor.off, plugins.state.disabled
       "Désactivé"  <- authProviders.status.disabled, permissions.rules.disabled
   "{name} upgraded"
       "Application {name} mise à jour"  <- appPlugins.upgraded
@@ -96,7 +103,11 @@ Same English, different French (review — context may justify it):
       "Précédent"  <- tour.back
   "Added"
       "Ajoutés"  <- appPlugins.wizard.diff.filesAdded, dashboard.added, sync.fields.added
+      "Ajout manuel"  <- groups.source.manual
       "Ajoutée"  <- conn.sshkeys.col.added
+  "Changed"
+      "Modifiés"  <- appPlugins.wizard.diff.filesChanged
+      "Modifié"  <- defaultApps.status.custom
   "Install"
       "Installer"  <- appPlugins.wizard.install, install.install, plugins.install
       "Installation"  <- appPlugins.wizard.steps.done, pluginRequests.op.install
@@ -115,6 +126,9 @@ Same English, different French (review — context may justify it):
   "To"
       "Au"  <- audit.fields.to
       "À"  <- advsearch.size.to
+  "Comment"
+      "Commentaire"  <- audit.target.comment
+      "Commenter"  <- permissions.items.comments.write.label
   "Auth providers"
       "Fournisseurs d’authentification"  <- authProviders.title
       "Authentification"  <- nav.authProviders
@@ -132,7 +146,7 @@ Same English, different French (review — context may justify it):
       "Désactivée"  <- profile.totp.disabled
   "None"
       "Aucun"  <- common.none, usage.fields.providerNone
-      "Aucune"  <- permissions.none
+      "Aucune"  <- defaultApps.none, permissions.none
   "Search"
       "Rechercher"  <- common.search, advsearch.submit, toolbar.search, viewer.search
       "Recherche"  <- nav.search, tour.step.search.title
@@ -186,6 +200,9 @@ Same English, different French (review — context may justify it):
   "Done"
       "Terminée"  <- queue.status.done
       "Terminé"  <- storages.catalog.fillerState.converged, access.done, e2e.recovery.done, opc.status.done (+3)
+  "Fix"
+      "Corriger"  <- replica.failures.fixOne
+      "Réparer"  <- tools.thumbs.mode_fix
   "Look in"
       "Rechercher dans"  <- search.scope
       "Chercher dans"  <- advsearch.scope.label
@@ -195,6 +212,12 @@ Same English, different French (review — context may justify it):
   "Aborted"
       "Interrompue"  <- sync.state.aborted
       "Interrompu"  <- upload.aborted
+  "Link"
+      "Associer"  <- tenants.link
+      "Lien"  <- symlink.badge.unknown
+  "Drawn"
+      "Générés"  <- tools.thumbs.count.ok
+      "Dessinée"  <- plugin.pdf.style_drawn
   "Empty trash"
       "Vider la corbeille"  <- trash.empty, trash.empty_modal_title, trash.empty_action
       "Vidage de la corbeille"  <- opc.kind.trash

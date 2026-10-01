@@ -219,6 +219,8 @@ const KEEP_WORDS = new Set(
     'Stockages Direction Zone Zones Style Styles Protection Solution Position Mode mode Modes ' +
     'Instances Microsoft Google Amazon Dropbox OneDrive Nextcloud Port Ports Notes Note Score Auto Portable portable Documentation Logo Secret Archive Archives archive Navigation Danger ' +
     'Administration minute ' +
+    // container runtimes, as the admin panel names them (v0.50.0)
+    'Docker Kubernetes Podman containerd ' +
     // sample values and input masks
     'fileman foo bar XXXX'
   ).split(/\s+/),
@@ -237,6 +239,7 @@ const IDENTICAL_OK = new Set([
   'install.dl.mac_brew', // product name: Homebrew
   'install.dl.rpm', // distribution names + file type: Fedora / openSUSE (.rpm)
   'login.realm', // filex's concept name, kept as identity providers show it (glossary: realm, v0.50.0)
+  'tenants.fields.realm', // the same field on the tenant editor (v0.50.0)
 ]);
 function identicalAllowed(key, en) {
   if (IDENTICAL_OK.has(key)) return true;

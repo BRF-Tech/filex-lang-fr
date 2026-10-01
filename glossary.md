@@ -245,6 +245,11 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | first sign-in rule | règle de première connexion | "Open an account at the first sign-in" → *Créer un compte à la première connexion* |
 | operating-system account / Linux account / Windows account | compte du système d’exploitation / compte Linux / compte Windows | Windows' built-in account and policy names are the French builds' own (*Administrateur*, *Invité*, *AUTORITE NT*, *Accéder à cet ordinateur à partir du réseau*) - see *Decisions* |
 | realm (an organization's sign-in name on the login page) | realm (*le realm*) | kept, as *claim*: the word identity providers (Keycloak) show. *Domaine* is taken by the Windows domain and the e-mail domain of the same feature. The label *Realm* is identical to the English and allowed in `validate-fr.mjs` (`IDENTICAL_OK`) |
+| default apps (which app opens, and which draws the thumbnail of, each kind of file, v0.50.0) | applications par défaut | admin tab, audit resource and the user's own section in *Paramètres*; "draw thumbnails" → *générer les miniatures* (never *dessiner*); the column "Draws thumbnails" → *Génération des miniatures* (*Génère …* at the start of a label trips the "tu" lint); "Back to the default" → *Rétablir l’ordre par défaut* |
+| own domain (a tenant's CNAME, v0.50.0) | domaine personnalisé | kept apart from the realm and from the tenant's *Adresse propre* (`tenants.fields.host`) |
+| slug (a tenant's short name, v0.50.0) | identifiant court | a sign-in provider's "Short name" stays *nom court* |
+| link / unlink (a storage to a tenant, v0.50.0) | associer / dissocier | audit nouns *association* / *dissociation d’un stockage* |
+| Tools (maintenance page, v0.50.0) | Outils | "Thumbnail repair" → *Réparation des miniatures* |
 
 **v0.49.0 (roles and permissions) — notes:**
 
