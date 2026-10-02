@@ -3,11 +3,11 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.49.0) — 5276 strings (344 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.49.0) — 5313 strings (344 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 5276 of 5276 strings; the other 0 show in English
+[fr] 100% translated — 5313 of 5313 strings; the other 0 show in English
   183 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it
@@ -29,18 +29,18 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             2969 strings
+                   admin panel (vue-i18n)             3006 strings
                    explorer (plain {var})             2202 strings
                    server (mails, public pages)       344 strings
-                   239 keys exist in both catalogues -> 5276 strings
+                   239 keys exist in both catalogues -> 5313 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (5279 strings)
+  pack           : translations\fr.json  (5316 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 239 (one flat pack value serves both).
   identical English in both: 239
 
-Size: 389918 bytes of keys + values (limit 1048576).
+Size: 395312 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
 Consistency: 69 short English labels translated more than one way (see below)
@@ -142,7 +142,7 @@ Same English, different French (review — context may justify it):
       "Copier"  <- common.copy, desktop.copy, access.copy, conn.guide.copy (+7)
       "Copie"  <- queue.type.copy, opc.kind.copy
   "Disabled"
-      "Désactivé"  <- common.disabled, external.overall.disabled, external.states.disabled, conn.list.disabled
+      "Désactivé"  <- common.disabled, external.overall.disabled, external.states.disabled, users.status.disabled (+1)
       "Désactivée"  <- profile.totp.disabled
   "None"
       "Aucun"  <- common.none, usage.fields.providerNone

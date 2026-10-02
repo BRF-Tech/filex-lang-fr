@@ -250,6 +250,8 @@ Bleve, Vue, React, Go, cron, webhook, endpoint, bucket, backend, proxy.
 | slug (a tenant's short name, v0.50.0) | identifiant court | a sign-in provider's "Short name" stays *nom court* |
 | link / unlink (a storage to a tenant, v0.50.0) | associer / dissocier | audit nouns *association* / *dissociation d’un stockage* |
 | Tools (maintenance page, v0.50.0) | Outils | "Thumbnail repair" → *Réparation des miniatures* |
+| SSO identity / bound to it / SSO bind (v0.50.0) | identité SSO / liée à elle / liaison SSO | "Remove SSO bind" → *Supprimer la liaison SSO*; an account whose first SSO sign-in fixed its identity refuses another identity with the same address |
+| waiting for approval / approve and switch on (an account opened switched off by SSO, v0.50.0) | en attente d’approbation / approuver et activer | the security hints (*trust_email*, *show_refusal_reason*) keep every condition of the English: what stays off, who can then sign in to what |
 
 **v0.49.0 (roles and permissions) — notes:**
 

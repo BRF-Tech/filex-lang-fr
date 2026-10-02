@@ -254,8 +254,10 @@ const TU_IMPERATIVE_START =
 // "Recherche", "Copie", "Entre", "Installe", "Exécute" are left out on purpose: in UI French they are
 // far more often a noun, a preposition or a third person ("Installe filex…") than a "tu" imperative.
 // "Demande d’…" / "Demande de …" is the noun (« Demande d’extension », v0.49.0 plugin requests), not "demande !".
-// Keys where a glossary lint hit is a proper name: macOS's own « Réglages Système », a git "tag".
-const GLOSSARY_OK = new Set(['install.dl.dmg_hint', 'appPlugins.wizard.ref']);
+// Keys where a glossary lint hit is a proper name: macOS's own « Réglages Système », a git "tag",
+// or a message another program prints, quoted verbatim so the reader can match it: ONLYOFFICE's
+// « The document security token is not correctly formed » (v0.50.0).
+const GLOSSARY_OK = new Set(['install.dl.dmg_hint', 'appPlugins.wizard.ref', 'external.advisories.jwt_not_enforced']);
 const GLOSSARY_LINT = [
   [/\bcrypt(er|é|ée|és|ées|age)\b/i, 'use "chiffrer / chiffré" (never "crypter")'],
   [/\bcourriel/i, 'use "e-mail" (France), not "courriel"'],
