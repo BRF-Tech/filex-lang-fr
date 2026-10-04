@@ -3,12 +3,12 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.49.0) — 5313 strings (344 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.50.0) — 5502 strings (366 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 5313 of 5313 strings; the other 0 show in English
-  183 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 5502 of 5502 strings; the other 0 show in English
+  184 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it
   errors: 0 (none) · warnings: 0 (none)
@@ -29,21 +29,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3006 strings
-                   explorer (plain {var})             2202 strings
-                   server (mails, public pages)       344 strings
-                   239 keys exist in both catalogues -> 5313 strings
+                   admin panel (vue-i18n)             3143 strings
+                   explorer (plain {var})             2236 strings
+                   server (mails, public pages)       366 strings
+                   243 keys exist in both catalogues -> 5502 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (5316 strings)
+  pack           : translations\fr.json  (5505 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
-Keys shared by both catalogues: 239 (one flat pack value serves both).
-  identical English in both: 239
+Keys shared by both catalogues: 243 (one flat pack value serves both).
+  identical English in both: 243
 
-Size: 395312 bytes of keys + values (limit 1048576).
+Size: 411146 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 69 short English labels translated more than one way (see below)
+Consistency: 70 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -94,7 +94,7 @@ Same English, different French (review — context may justify it):
       "Téléversé"  <- usage.buckets.uploaded
   "Off"
       "Désactivée"  <- appPlugins.state.disabled, appPlugins.wizard.fileTypes.place.off, defaultApps.editor.off, plugins.state.disabled
-      "Désactivé"  <- authProviders.status.disabled, permissions.rules.disabled
+      "Désactivé"  <- authProviders.status.disabled, encryption.tenants.state.off, permissions.rules.disabled
   "{name} upgraded"
       "Application {name} mise à jour"  <- appPlugins.upgraded
       "Extension {name} mise à jour"  <- plugins.upgrade.done
@@ -129,9 +129,6 @@ Same English, different French (review — context may justify it):
   "Comment"
       "Commentaire"  <- audit.target.comment
       "Commenter"  <- permissions.items.comments.write.label
-  "Auth providers"
-      "Fournisseurs d’authentification"  <- authProviders.title
-      "Authentification"  <- nav.authProviders
   "Display name"
       "Nom affiché"  <- branding.name
       "Nom d’affichage"  <- storages.fields.name, users.fields.displayName
@@ -149,7 +146,7 @@ Same English, different French (review — context may justify it):
       "Aucune"  <- defaultApps.none, permissions.none
   "Search"
       "Rechercher"  <- common.search, advsearch.submit, toolbar.search, viewer.search
-      "Recherche"  <- nav.search, tour.step.search.title
+      "Recherche"  <- tour.step.search.title
   "Deleted"
       "Supprimés"  <- dashboard.deleted, sync.fields.deleted
       "Supprimé le"  <- trash.col_deleted_at, col.deleted
@@ -157,6 +154,15 @@ Same English, different French (review — context may justify it):
   "Users"
       "Comptes"  <- dashboard.stats.users
       "Utilisateurs"  <- nav.users, users.title
+  "On"
+      "Activée"  <- defaultApps.editor.on
+      "Activé"  <- encryption.tenants.state.on
+  "Expired"
+      "Expirée"  <- encryption.requests.status.expired, pluginRequests.status.expired
+      "Expiré"  <- myShares.expired, server.public.err_drop_expired_title
+  "Used"
+      "Utilisée"  <- encryption.requests.status.used
+      "Utilisé"  <- quota.used
   "Type"
       "Type"  <- explore.cols.mime, queue.fields.type, settings.folderView.col_type, settings.folderView.sort_type (+4)
       "Saisir"  <- plugin.sig.mode_type
@@ -166,9 +172,6 @@ Same English, different French (review — context may justify it):
   "Sign in"
       "Se connecter"  <- login.submit
       "Connexion"  <- login.title
-  "Expired"
-      "Expiré"  <- myShares.expired, server.public.err_drop_expired_title
-      "Expirée"  <- pluginRequests.status.expired
   "Sync runs"
       "Synchronisations"  <- nav.sync
       "Exécutions de synchronisation"  <- sync.title
