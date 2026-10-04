@@ -3,7 +3,7 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.50.0) — 5502 strings (366 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.51.0) — 5502 strings (366 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
