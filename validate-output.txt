@@ -3,11 +3,11 @@ filex-app.json is up to date.
 
 # node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.51.0) — 5502 strings (366 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.51.0) — 5621 strings (370 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 5502 of 5502 strings; the other 0 show in English
+[fr] 100% translated — 5621 of 5621 strings; the other 0 show in English
   184 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it
@@ -29,21 +29,21 @@ filex language pack validator
 # node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3143 strings
+                   admin panel (vue-i18n)             3258 strings
                    explorer (plain {var})             2236 strings
-                   server (mails, public pages)       366 strings
-                   243 keys exist in both catalogues -> 5502 strings
+                   server (mails, public pages)       370 strings
+                   243 keys exist in both catalogues -> 5621 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (5505 strings)
+  pack           : translations\fr.json  (5624 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 243 (one flat pack value serves both).
   identical English in both: 243
 
-Size: 411146 bytes of keys + values (limit 1048576).
+Size: 424266 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 70 short English labels translated more than one way (see below)
+Consistency: 72 short English labels translated more than one way (see below)
 
 Same English, different French (review — context may justify it):
   "Created"
@@ -117,6 +117,12 @@ Same English, different French (review — context may justify it):
   "Review"
       "Vérification"  <- appPlugins.wizard.steps.review
       "Examiner"  <- pluginRequests.actions.review
+  "expired"
+      "expirée"  <- appStore.license.status.expired
+      "expiration"  <- audit.verb.expire
+  "revoked"
+      "révoquée"  <- appStore.license.status.revoked
+      "révocation"  <- audit.verb.revoke
   "Upload"
       "Téléverser"  <- appearance.previewUpload, plugin.sig.mode_upload, toolbar.upload
       "Téléversement"  <- audit.target.upload, opc.kind.upload
