@@ -1,269 +1,28 @@
-# node scripts/pack.mjs build --check
 filex-app.json is up to date.
-
-# node scripts/validate.mjs filex-app.json --complete --plurals   (the filex validator, copied verbatim from the template)
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.51.0) — 5621 strings (370 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.51.0) — 5784 strings (371 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 5621 of 5621 strings; the other 0 show in English
-  184 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
+[fr] 100% translated — 5784 of 5784 strings; the other 0 show in English
+  195 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
-  13 plural key(s) lack a form for one of those categories and show the plain form for it
+  13 plural key(s) lack a form for one of those categories and show the plain form for it (--plurals lists them)
   errors: 0 (none) · warnings: 0 (none)
-  plural      archive.dictionary_size_value: lacks archive.dictionary_size_value_one
-  plural      drafts.count_of: lacks drafts.count_of_one
-  plural      inspector.activity.version: lacks inspector.activity.version_one
-  plural      inspector.versions.v: lacks inspector.versions.v_one
-  plural      opc.percent: lacks opc.percent_one
-  plural      peek.more: lacks peek.more_one
-  plural      selection.count: lacks selection.count_one
-  plural      server.app.wake.beyond: lacks server.app.wake.beyond_one
-  plural      sidenav.tags.more: lacks sidenav.tags.more_one
-  plural      tour.progress: lacks tour.progress_one
-  plural      tz.more: lacks tz.more_one
-  plural      viewer.counter: lacks viewer.counter_one
-  plural      viewer.page_n_of_m: lacks viewer.page_n_of_m_one
-
-# node scripts/validate-fr.mjs
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3258 strings
+                   admin panel (vue-i18n)             3420 strings
                    explorer (plain {var})             2236 strings
-                   server (mails, public pages)       370 strings
-                   243 keys exist in both catalogues -> 5621 strings
+                   server (mails, public pages)       371 strings
+                   243 keys exist in both catalogues -> 5784 strings
   plurals        : one, other — 3 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (5624 strings)
+  pack           : translations\fr.json  (5787 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 243 (one flat pack value serves both).
   identical English in both: 243
 
-Size: 424266 bytes of keys + values (limit 1048576).
+Size: 439471 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
-Consistency: 72 short English labels translated more than one way (see below)
-
-Same English, different French (review — context may justify it):
-  "Created"
-      "Créé le"  <- apiMcp.cols.created, common.created, shares.fields.created
-      "Créée le"  <- notifications.fields.createdAt
-  "Last used"
-      "Utilisé le"  <- apiMcp.cols.lastUsed
-      "Dernier usage"  <- conn.s3keys.col.lastUsed, conn.sshkeys.col.lastUsed, conn.tokens.col.used
-  "All"
-      "Tout"  <- apiMcp.scopeAll, search.scopeAll
-      "Tous"  <- common.all
-      "Toutes"  <- permissions.all
-  "Delete"
-      "Suppression"  <- apiMcp.scopeName.delete, queue.type.delete, opc.kind.delete
-      "Supprimer"  <- authProviders.delete, common.delete, permissions.items.files.delete.label, versions.purge (+2)
-  "Review update"
-      "Vérifier la mise à jour"  <- appPlugins.actions.reviewUpdate
-      "Examiner la mise à jour"  <- plugins.actions.reviewUpdate
-  "Upgrade"
-      "Mettre à jour"  <- appPlugins.actions.upgrade, appPlugins.wizard.upgrade, plugins.upgrade.action
-      "Mise à jour"  <- pluginRequests.op.upgrade
-  "{name} removed"
-      "Application {name} retirée"  <- appPlugins.deleted
-      "{name} retirée"  <- plugins.deleted
-  "Lift the lock"
-      "Lever le verrou"  <- appPlugins.detail.locks.unlock
-      "Lever le verrouillage"  <- loginSecurity.locks.unlock
-  "Enabled"
-      "Activée"  <- appPlugins.detail.overrides.enabled, appPlugins.fields.enabled, plugins.fields.enabled, profile.totp.enabled (+1)
-      "Activé"  <- common.enabled, permissions.rules.enabled, webhooks.fields.enabled
-  "Due"
-      "Échéance"  <- appPlugins.detail.schedule.due
-      "Prévu"  <- appPlugins.detail.schedule.statuses.due
-  "Failed"
-      "Échec"  <- appPlugins.detail.schedule.statuses.failed, appPlugins.state.failed, appearance.previewDanger, notifications.webhookStatus.failed (+3)
-      "Échecs"  <- queue.stats.failed, replica.report.fields.failedCount, tools.thumbs.count.failed
-  "Skipped"
-      "Ignoré"  <- appPlugins.detail.schedule.statuses.skipped
-      "Ignorés"  <- tools.thumbs.count.skipped
-  "Updated"
-      "Mise à jour le"  <- appPlugins.detail.updated
-      "Mis à jour"  <- common.updated, dashboard.updatedFiles, sync.fields.updated
-  "{name} installed"
-      "Application {name} installée"  <- appPlugins.installed
-      "{name} installée"  <- plugins.installed
-  "Uploaded"
-      "Téléversée"  <- appPlugins.source.upload
-      "Téléversé"  <- usage.buckets.uploaded
-  "Off"
-      "Désactivée"  <- appPlugins.state.disabled, appPlugins.wizard.fileTypes.place.off, defaultApps.editor.off, plugins.state.disabled
-      "Désactivé"  <- authProviders.status.disabled, encryption.tenants.state.off, permissions.rules.disabled
-  "{name} upgraded"
-      "Application {name} mise à jour"  <- appPlugins.upgraded
-      "Extension {name} mise à jour"  <- plugins.upgrade.done
-  "Back"
-      "Retour"  <- appPlugins.wizard.back, common.back
-      "Précédent"  <- tour.back
-  "Added"
-      "Ajoutés"  <- appPlugins.wizard.diff.filesAdded, dashboard.added, sync.fields.added
-      "Ajout manuel"  <- groups.source.manual
-      "Ajoutée"  <- conn.sshkeys.col.added
-  "Changed"
-      "Modifiés"  <- appPlugins.wizard.diff.filesChanged
-      "Modifié"  <- defaultApps.status.custom
-  "Install"
-      "Installer"  <- appPlugins.wizard.install, install.install, plugins.install
-      "Installation"  <- appPlugins.wizard.steps.done, pluginRequests.op.install
-  "New"
-      "Nouvelle"  <- appPlugins.wizard.newPermission
-      "Nouveau"  <- appearance.previewNew, drive.new
-  "Review"
-      "Vérification"  <- appPlugins.wizard.steps.review
-      "Examiner"  <- pluginRequests.actions.review
-  "expired"
-      "expirée"  <- appStore.license.status.expired
-      "expiration"  <- audit.verb.expire
-  "revoked"
-      "révoquée"  <- appStore.license.status.revoked
-      "révocation"  <- audit.verb.revoke
-  "Upload"
-      "Téléverser"  <- appearance.previewUpload, plugin.sig.mode_upload, toolbar.upload
-      "Téléversement"  <- audit.target.upload, opc.kind.upload
-  "From"
-      "Du"  <- audit.fields.from
-      "De"  <- advsearch.size.from
-  "To"
-      "Au"  <- audit.fields.to
-      "À"  <- advsearch.size.to
-  "Comment"
-      "Commentaire"  <- audit.target.comment
-      "Commenter"  <- permissions.items.comments.write.label
-  "Display name"
-      "Nom affiché"  <- branding.name
-      "Nom d’affichage"  <- storages.fields.name, users.fields.displayName
-  "Copied"
-      "Copié"  <- common.copied, desktop.copied, access.copied, conn.guide.copied (+3)
-      "Copiée"  <- e2e.recovery.copied
-  "Copy"
-      "Copier"  <- common.copy, desktop.copy, access.copy, conn.guide.copy (+7)
-      "Copie"  <- queue.type.copy, opc.kind.copy
-  "Disabled"
-      "Désactivé"  <- common.disabled, external.overall.disabled, external.states.disabled, users.status.disabled (+1)
-      "Désactivée"  <- profile.totp.disabled
-  "None"
-      "Aucun"  <- common.none, usage.fields.providerNone
-      "Aucune"  <- defaultApps.none, permissions.none
-  "Search"
-      "Rechercher"  <- common.search, advsearch.submit, toolbar.search, viewer.search
-      "Recherche"  <- tour.step.search.title
-  "Deleted"
-      "Supprimés"  <- dashboard.deleted, sync.fields.deleted
-      "Supprimé le"  <- trash.col_deleted_at, col.deleted
-      "Supprimé"  <- toast.deleted
-  "Users"
-      "Comptes"  <- dashboard.stats.users
-      "Utilisateurs"  <- nav.users, users.title
-  "On"
-      "Activée"  <- defaultApps.editor.on
-      "Activé"  <- encryption.tenants.state.on
-  "Expired"
-      "Expirée"  <- encryption.requests.status.expired, pluginRequests.status.expired
-      "Expiré"  <- myShares.expired, server.public.err_drop_expired_title
-  "Used"
-      "Utilisée"  <- encryption.requests.status.used
-      "Utilisé"  <- quota.used
-  "Type"
-      "Type"  <- explore.cols.mime, queue.fields.type, settings.folderView.col_type, settings.folderView.sort_type (+4)
-      "Saisir"  <- plugin.sig.mode_type
-  "Modified"
-      "Modifié le"  <- explore.cols.modified, settings.folderView.col_modified, settings.folderView.sort_modified, userSettings.prefs.fvSort_modified (+2)
-      "Modifié"  <- filter.modified
-  "Sign in"
-      "Se connecter"  <- login.submit
-      "Connexion"  <- login.title
-  "Sync runs"
-      "Synchronisations"  <- nav.sync
-      "Exécutions de synchronisation"  <- sync.title
-  "Info"
-      "Information"  <- notifications.severity.info
-      "Infos"  <- ctx.info
-  "Dismiss"
-      "Ignorer"  <- pendingOps.dismiss, opc.dismiss
-      "Masquer"  <- appframe.dismiss
-  "Archive"
-      "Archivage"  <- pendingOps.verb.archive, opc.kind.archive
-      "Archive"  <- ftype.archive, viewer.archive.root
-  "Move"
-      "Déplacer"  <- permissions.items.files.move.label, ctx.move
-      "Déplacement"  <- queue.type.move, opc.kind.move
-  "Delete permanently"
-      "Supprimer définitivement"  <- permissions.items.files.purge.label, ctx.delete_perm, modal.delete.permanent_confirm
-      "Suppression définitive"  <- opc.kind.purge
-  "Rename"
-      "Renommer"  <- permissions.items.files.rename.label, ctx.rename, modal.rename.title, shortcuts.rename
-      "Renommage"  <- opc.kind.rename
-  "Verified"
-      "Vérifiée"  <- plugins.conformance.verified
-      "Vérifié"  <- settings.smtp.verified
-  "Cancelled"
-      "Annulée"  <- queue.cancelled, queue.status.cancelled
-      "Annulées"  <- queue.stats.cancelled
-      "Annulé"  <- opc.status.aborted
-  "Done"
-      "Terminée"  <- queue.status.done
-      "Terminé"  <- storages.catalog.fillerState.converged, access.done, e2e.recovery.done, opc.status.done (+3)
-  "Fix"
-      "Corriger"  <- replica.failures.fixOne
-      "Réparer"  <- tools.thumbs.mode_fix
-  "Look in"
-      "Rechercher dans"  <- search.scope
-      "Chercher dans"  <- advsearch.scope.label
-  "Share"
-      "Partage réseau"  <- storages.fields.share
-      "Partager"  <- access.ui.share, ctx.share, modal.share.create, shortcuts.share (+1)
-  "Aborted"
-      "Interrompue"  <- sync.state.aborted
-      "Interrompu"  <- upload.aborted
-  "Link"
-      "Associer"  <- tenants.link
-      "Lien"  <- symlink.badge.unknown
-  "Drawn"
-      "Générés"  <- tools.thumbs.count.ok
-      "Dessinée"  <- plugin.pdf.style_drawn
-  "Empty trash"
-      "Vider la corbeille"  <- trash.empty, trash.empty_modal_title, trash.empty_action
-      "Vidage de la corbeille"  <- opc.kind.trash
-  "Restore"
-      "Restaurer"  <- trash.restore, versions.restore, ctx.restore, inspector.versions.restore
-      "Restauration"  <- opc.kind.restore
-  "Change password"
-      "Modifier le mot de passe"  <- userSettings.security.passwordTitle
-      "Changer le mot de passe"  <- e2e.password.submit
-  "Extract to folder"
-      "Dossier de destination"  <- archive.destination_folder
-      "Extraire dans un dossier"  <- archive.extract_to_folder
-  "Star"
-      "Favori"  <- col.star
-      "Ajouter aux favoris"  <- ctx.star
-  "Mount it"
-      "Monter"  <- conn.guide.mount.linux.mountCaption, conn.guide.nfs.linux.mountCaption, conn.guide.nfs.mac.mountCaption
-      "Montage"  <- conn.guide.s3.s3fs.mountCaption
-  "Limited to"
-      "Limité à"  <- conn.nfs.col.scope
-      "Limitée à"  <- conn.s3keys.col.scope
-  "Cut"
-      "Couper"  <- ctx.cut, shortcuts.cut
-      "Coupé"  <- toast.cut
-  "Up one level"
-      "Dossier parent"  <- destpicker.up
-      "Remonter d’un niveau"  <- public.up
-      "Niveau supérieur"  <- toolbar.go_up
-  "Anyone"
-      "Tout le monde"  <- filter.people.any
-      "N’importe qui"  <- plugin.pdf.unassigned
-  "{count} refused ({reason})"
-      "{count} refusés ({reason})"  <- server.app.wake.refused
-      "{count} refusé ({reason})"  <- server.app.wake.refused_one
-  "{count} scheduled"
-      "{count} planifiés"  <- server.app.wake.scheduled
-      "{count} planifié"  <- server.app.wake.scheduled_one
-  "Navigation"
-      "Navigation"  <- shortcuts.group.nav
-      "Volet de navigation"  <- sidenav.title
+Consistency: 74 short English labels translated more than one way (see below)
