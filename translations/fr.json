@@ -5045,7 +5045,6 @@
   "tenants.generalTitle": "Général",
   "tenants.link": "Associer",
   "tenants.linkStorage": "Associer un stockage",
-  "tenants.modeOff": "Le mode multilocataire est désactivé (FILEX_MULTI_TENANT) : seul le locataire propre à la plateforme peut se connecter. Les autres locataires et tout ce qu’ils possèdent sont conservés, et leurs utilisateurs pourront de nouveau se connecter quand il sera réactivé.",
   "tenants.noMatch": "Aucun locataire ne correspond.",
   "tenants.noStorages": "Aucun stockage n’est associé.",
   "tenants.oidcHint": "Le fournisseur d’identité propre au locataire, utilisé sur sa propre adresse. Vide : ses utilisateurs se connectent avec un mot de passe ou par les fournisseurs de la plateforme.",
