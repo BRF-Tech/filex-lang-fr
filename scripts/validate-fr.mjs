@@ -240,6 +240,10 @@ const IDENTICAL_OK = new Set([
   'install.dl.rpm', // distribution names + file type: Fedora / openSUSE (.rpm)
   'login.realm', // filex's concept name, kept as identity providers show it (glossary: realm, v0.50.0)
   'tenants.fields.realm', // the same field on the tenant editor (v0.50.0)
+  // the desktop sync engine's durations (v0.54.0): h, min and s are the unit symbols in French too
+  'server.sync.time.hours', // {hours} h {minutes} min
+  'server.sync.time.minutes', // {minutes} min
+  'server.sync.time.seconds', // {seconds} s
 ]);
 function identicalAllowed(key, en) {
   if (IDENTICAL_OK.has(key)) return true;
