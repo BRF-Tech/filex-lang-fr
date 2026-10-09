@@ -1,6 +1,6 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.54.0+a4428dc3) — 6529 strings (1222 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.55.0) — 6529 strings (1222 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
