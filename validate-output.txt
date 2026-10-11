@@ -22,7 +22,7 @@ filex language-pack validator
 Keys shared by both catalogues: 234 (one flat pack value serves both).
   identical English in both: 234
 
-Size: 520109 bytes of keys + values (limit 1048576).
+Size: 520157 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
-Warnings: 29 (TYPO=29)
+Warnings: 0 (none)
 Consistency: 79 short English labels translated more than one way (see below)
