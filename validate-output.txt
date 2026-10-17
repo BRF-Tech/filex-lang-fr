@@ -1,6 +1,6 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : /var/lib/filex-langpacks/filex-lang-fr/catalogue (filex 0.56.3+a8488515) — 6988 strings (1417 of them the server's: emails, public pages, notifications)
+  catalogue : /home/coder/filex-lang-fr/catalogue (filex 0.57.0) — 6988 strings (1417 of them the server's: emails, public pages, notifications)
   syntax    : built-in checker (vue-i18n parser not installed)
   pack      : filex-app.json (filex-app.json)
 
