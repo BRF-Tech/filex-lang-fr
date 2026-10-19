@@ -1,28 +1,28 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : /home/coder/filex-lang-fr/catalogue (filex 0.57.0) — 6988 strings (1417 of them the server's: emails, public pages, notifications)
-  syntax    : built-in checker (vue-i18n parser not installed)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.57.3+6ca679fb) — 7003 strings (1417 of them the server's: emails, public pages, notifications)
+  syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 6988 of 6988 strings; the other 0 show in English
+[fr] 100% translated — 7003 of 7003 strings; the other 0 show in English
   213 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it (--plurals lists them)
   errors: 0 (none) · warnings: 0 (none)
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3488 strings
-                   explorer (plain {var})             2315 strings
+                   admin panel (vue-i18n)             3494 strings
+                   explorer (plain {var})             2324 strings
                    server (mails, public pages)       1417 strings
-                   232 keys exist in both catalogues -> 6988 strings
+                   232 keys exist in both catalogues -> 7003 strings
   plurals        : one, other — 5 extra form key(s) beyond the catalogue
-  pack           : translations/fr.json  (6993 strings)
-  syntax check   : regex fallback (vue-i18n compiler not found)
+  pack           : translations\fr.json  (7008 strings)
+  syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 232 (one flat pack value serves both).
   identical English in both: 232
 
-Size: 563540 bytes of keys + values (limit 1048576).
+Size: 564717 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 129 (TYPO=127 REGISTER=2)
 Consistency: 84 short English labels translated more than one way (see below)
