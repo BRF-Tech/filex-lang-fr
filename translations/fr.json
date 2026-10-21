@@ -5140,6 +5140,7 @@
   "server.onlyoffice.saved_beside_title": "Votre modification a été enregistrée sous {saved}",
   "server.onlyoffice.saved_conflict_body": "{name} a été modifié ailleurs après l’ouverture de votre session de modification : votre modification n’a donc pas remplacé cette version et se trouve dans {saved}, dans le même dossier. {name} conserve l’autre modification.",
   "server.onlyoffice.saved_conflict_title": "{name} a changé pendant votre modification",
+  "server.ops.wait.storage_scan": "En attente de son tour : le stockage est en cours d’analyse",
   "server.origin.refused": "Cette modification a été envoyée depuis un autre site, et non depuis filex lui-même : elle a donc été refusée pour protéger votre session. Si ce site intègre filex volontairement, un administrateur peut l’autoriser avec `FILEX_CORS_ALLOWED_ORIGINS`.",
   "server.perm.action.access.api": "créer des clés d’API",
   "server.perm.action.access.desktop": "se connecter depuis l’application de bureau",
