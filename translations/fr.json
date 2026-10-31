@@ -6925,6 +6925,7 @@
   "viewer.office_unreachable": "Le serveur de documents ne répond pas pour le moment. Réessayez plus tard, ou téléchargez le fichier.",
   "viewer.office_unreachable_admin": "Le serveur de documents ONLYOFFICE ne répond pas. Vérifiez-le dans le panneau d’administration, sous Services externes.",
   "viewer.open_in_new_tab": "Ouvrir dans un nouvel onglet",
+  "viewer.original_size": "Taille d’origine",
   "viewer.page_n_of_m": "Page {n} sur {m}",
   "viewer.pdf_inline_failed": "Votre navigateur n’a pas pu afficher ce PDF dans la page.",
   "viewer.peer_not_installed": "Ce type de fichier ne peut pas être affiché ici. Téléchargez-le pour l’ouvrir sur votre appareil.",
