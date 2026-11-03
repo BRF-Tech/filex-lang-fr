@@ -1,28 +1,28 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : /var/lib/filex-langpacks/filex-lang-fr/catalogue (filex 0.57.7+fe39f719) — 7005 strings (1418 of them the server's: emails, public pages, notifications)
-  syntax    : built-in checker (vue-i18n parser not installed)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.58.0) — 7109 strings (1453 of them the server's: emails, public pages, notifications)
+  syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 7005 of 7005 strings; the other 0 show in English
+[fr] 100% translated — 7109 of 7109 strings; the other 0 show in English
   213 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it (--plurals lists them)
   errors: 0 (none) · warnings: 0 (none)
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3494 strings
-                   explorer (plain {var})             2325 strings
-                   server (mails, public pages)       1418 strings
-                   232 keys exist in both catalogues -> 7005 strings
-  plurals        : one, other — 5 extra form key(s) beyond the catalogue
-  pack           : translations/fr.json  (7010 strings)
-  syntax check   : regex fallback (vue-i18n compiler not found)
+                   admin panel (vue-i18n)             3555 strings
+                   explorer (plain {var})             2333 strings
+                   server (mails, public pages)       1453 strings
+                   232 keys exist in both catalogues -> 7109 strings
+  plurals        : one, other — 6 extra form key(s) beyond the catalogue
+  pack           : translations\fr.json  (7115 strings)
+  syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 232 (one flat pack value serves both).
   identical English in both: 232
 
-Size: 564845 bytes of keys + values (limit 1048576).
+Size: 575647 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 129 (TYPO=127 REGISTER=2)
 Consistency: 84 short English labels translated more than one way (see below)
