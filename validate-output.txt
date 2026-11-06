@@ -1,28 +1,28 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : G:\filex-lang-fr\catalogue (filex 0.58.0) — 7109 strings (1453 of them the server's: emails, public pages, notifications)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.59.0+5787116e) — 7134 strings (1456 of them the server's: emails, public pages, notifications)
   syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
-[fr] 100% translated — 7109 of 7109 strings; the other 0 show in English
+[fr] 100% translated — 7134 of 7134 strings; the other 0 show in English
   213 value(s) are identical to the English (fine for names and codes; otherwise still to translate)
   plural categories: one, other — explorer/server keys take <key>_one beside the plain key (other); admin strings take 2 | forms in that order
   13 plural key(s) lack a form for one of those categories and show the plain form for it (--plurals lists them)
   errors: 0 (none) · warnings: 0 (none)
 filex language-pack validator
   English source : catalogue (catalogue in this repository)
-                   admin panel (vue-i18n)             3555 strings
-                   explorer (plain {var})             2333 strings
-                   server (mails, public pages)       1453 strings
-                   232 keys exist in both catalogues -> 7109 strings
+                   admin panel (vue-i18n)             3572 strings
+                   explorer (plain {var})             2338 strings
+                   server (mails, public pages)       1456 strings
+                   232 keys exist in both catalogues -> 7134 strings
   plurals        : one, other — 6 extra form key(s) beyond the catalogue
-  pack           : translations\fr.json  (7115 strings)
+  pack           : translations\fr.json  (7140 strings)
   syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 232 (one flat pack value serves both).
   identical English in both: 232
 
-Size: 575849 bytes of keys + values (limit 1048576).
+Size: 580907 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 0 (none)
 Consistency: 84 short English labels translated more than one way (see below)
