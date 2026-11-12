@@ -1,7 +1,7 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : /var/lib/filex-langpacks/filex-lang-fr/catalogue (filex 0.59.1+291812e3) — 7450 strings (1535 of them the server's: emails, public pages, notifications)
-  syntax    : built-in checker (vue-i18n parser not installed)
+  catalogue : G:\filex-lang-fr\catalogue (filex 0.60.0) — 7450 strings (1535 of them the server's: emails, public pages, notifications)
+  syntax    : @intlify/message-compiler 9.14.5 (vue-i18n's own parser)
   pack      : filex-app.json (filex-app.json)
 
 [fr] 100% translated — 7450 of 7450 strings; the other 0 show in English
@@ -16,8 +16,8 @@ filex language-pack validator
                    server (mails, public pages)       1535 strings
                    232 keys exist in both catalogues -> 7450 strings
   plurals        : one, other — 6 extra form key(s) beyond the catalogue
-  pack           : translations/fr.json  (7456 strings)
-  syntax check   : regex fallback (vue-i18n compiler not found)
+  pack           : translations\fr.json  (7456 strings)
+  syntax check   : @intlify/message-compiler 9.14.5 (the parser vue-i18n uses)
 
 Keys shared by both catalogues: 232 (one flat pack value serves both).
   identical English in both: 232
