@@ -6489,6 +6489,7 @@
       "templates.name.page_folder": "Dossier partagé (sans JavaScript)",
       "templates.name.page_layout": "Mise en page des pages publiques (toutes celles ci-dessous)",
       "templates.name.page_pin": "Saisie du PIN",
+      "templates.name.page_route": "Page d’une adresse d’application (aperçu d’un lien court)",
       "templates.name.page_shell": "Page de lien public (cadre)",
       "templates.name.page_unlocked": "PIN accepté",
       "templates.name.page_zip_wait": "Préparation d’un ZIP",
