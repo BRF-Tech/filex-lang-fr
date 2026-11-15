@@ -1,6 +1,6 @@
 filex-app.json is up to date.
 filex language pack validator
-  catalogue : /var/lib/filex-langpacks/filex-lang-fr/catalogue (filex 0.60.2+4d605dd4) — 7518 strings (1550 of them the server's: emails, public pages, notifications)
+  catalogue : /var/lib/filex-langpacks/filex-lang-fr/catalogue (filex 0.60.2+325a89e0) — 7518 strings (1550 of them the server's: emails, public pages, notifications)
   syntax    : built-in checker (vue-i18n parser not installed)
   pack      : filex-app.json (filex-app.json)
 
@@ -22,7 +22,7 @@ filex language-pack validator
 Keys shared by both catalogues: 232 (one flat pack value serves both).
   identical English in both: 232
 
-Size: 614920 bytes of keys + values (limit 1048576).
+Size: 615022 bytes of keys + values (limit 1048576).
 Errors  : 0 (none)
 Warnings: 82 (TYPO=82)
 Consistency: 84 short English labels translated more than one way (see below)
